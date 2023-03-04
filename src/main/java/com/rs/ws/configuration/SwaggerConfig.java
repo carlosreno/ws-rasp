@@ -18,7 +18,7 @@ public class SwaggerConfig {
     @Bean
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2).useDefaultResponseMessages(false).groupName("v0").select()
-                .apis(RequestHandlerSelectors.basePackage("com.rs.ws.Controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.rs.ws.controller"))
                 .paths(PathSelectors.any()).build().apiInfo(apiInfo());
     }
 

@@ -1,4 +1,4 @@
-package com.rs.ws.Controller;
+package com.rs.ws.controller;
 import com.rs.ws.dto.SubscriptionTypeDto;
 import com.rs.ws.model.SubscriptionType;
 import com.rs.ws.service.SubscriptionTypeService;
@@ -23,7 +23,7 @@ public class SubscriptionTypeController {
     public ResponseEntity<SubscriptionType> findById(@PathVariable (name = "id") Long id){
             return ResponseEntity.status(HttpStatus.FOUND).body(subscriptionTypeService.findById(id));
     }
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<SubscriptionType> create(@Valid @RequestBody SubscriptionTypeDto subscriptionType){
         return ResponseEntity.status(HttpStatus.CREATED).body(subscriptionTypeService.create(subscriptionType));
     }

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.annotation.processing.Generated;
 import javax.persistence.*;
@@ -15,8 +16,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Entity
 @Builder
-public class UserType implements Serializable {
-
+public class UserType implements GrantedAuthority {
     @Id
     @GeneratedValue(generator = "suser_type_id_seq", strategy = GenerationType.AUTO)
     @Column(name = "user_type_id")
@@ -25,4 +25,8 @@ public class UserType implements Serializable {
     private String description;
 
 
+    @Override
+    public String getAuthority() {
+        return name;
+    }
 }

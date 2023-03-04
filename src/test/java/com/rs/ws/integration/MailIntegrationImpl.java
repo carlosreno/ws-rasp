@@ -11,6 +11,6 @@ public class MailIntegrationImpl {
 
     @Test
     void createCostumer(){
-        mailIntegration.sendMail("carlosdavi090787@gmail.com","Salve mane");
+        mailIntegration.sendMail("carlosdavi090787@gmail.com","Salve mane","salve");
     }
 }

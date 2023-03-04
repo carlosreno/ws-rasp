@@ -16,7 +16,10 @@ import com.rs.ws.model.Users;
 import com.rs.ws.repository.UserPaymenteInfoRepository;
 import com.rs.ws.repository.UserRepository;
 import com.rs.ws.service.PaymentInfoService;
+import org.springframework.stereotype.Component;
+
 import java.util.Objects;
+@Component
 public class PaymentInfoServiceImpl implements PaymentInfoService {
     private final UserRepository userRepository;
     private final UserPaymenteInfoRepository userPaymenteInfoRepository;
@@ -31,7 +34,7 @@ public class PaymentInfoServiceImpl implements PaymentInfoService {
 
     @Override
     public Boolean process(PaymentProcessDto dto) {
-        var userOpt = userRepository.findById(dto.getUserPaymentInfoDto().getId());
+        var userOpt = userRepository.findById(dto.getUserPaymentInfoDto().getUserId());
 
         if (userOpt.isPresent()) {
             Users user = userOpt.get();
