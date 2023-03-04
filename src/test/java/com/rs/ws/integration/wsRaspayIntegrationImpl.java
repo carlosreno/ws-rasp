@@ -23,13 +23,13 @@ class wsRaspayIntegrationImpl {
     }
     @Test
     void createOrder(){
-        OrderDto orderDto = new OrderDto(null,"63f2c634fa6233331833c387", BigDecimal.ZERO,"MES2022");
+        OrderDto orderDto = new OrderDto(null,"64035fc04022d11268fe63b6", BigDecimal.ZERO,"MES2022");
         wsRaspayIntegration.createOrder(orderDto);
     }
     @Test
     void processPayment(){
         CreditCardDto creditCardDto = new CreditCardDto(123L,"08142678314",0L,6L,"1234123412341234",2025L);
-        PayentDto payentDto = new PayentDto(creditCardDto,"63f2c634fa6233331833c387","63f4b70d2ba7a427dfbe44df");
+        PayentDto payentDto = new PayentDto(creditCardDto,"64035fc04022d11268fe63b6","64035fec4022d11268fe63b7");
         wsRaspayIntegration.processPayment(payentDto);
     }
 

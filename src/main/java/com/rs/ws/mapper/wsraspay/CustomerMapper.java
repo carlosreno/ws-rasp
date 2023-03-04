@@ -10,8 +10,8 @@ public class CustomerMapper {
     public static CustomerDto build(Users user){
         var fullName = user.getName().split(" ");
         var firtName = fullName[0];
-        var lastName = fullName.length-1 > 1 ? fullName[fullName.length-1]: "";
-
+        var lastName = fullName.length-1 >= 1 ? fullName[fullName.length-1]:"";
+        System.out.println(firtName+"  "+lastName);
         return CustomerDto.builder()
                 .cpf(user.getCpf())
                 .email(user.getEmail())

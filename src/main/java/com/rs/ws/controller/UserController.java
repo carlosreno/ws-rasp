@@ -1,4 +1,4 @@
-package com.rs.ws.Controller;
+package com.rs.ws.controller;
 
 import com.rs.ws.dto.UserDto;
 import com.rs.ws.model.Users;
